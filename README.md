@@ -15,14 +15,14 @@ This is a full DevOps pipeline demo using:
 
 ### 1. Clone the project
 
-```
+```bash
 git clone https://github.com/Naumov94/DevOps-k8s-ci-cd-demo.git
 cd DevOps-k8s-ci-cd-demo/app
 ```
 
 ### 2. Run locally (without Docker)
 
-```
+```bash
 pip install -r requirements.txt
 python3 app.py
 ```
@@ -43,11 +43,23 @@ The app will respond with:
 Hello from Flask inside Docker + Kubernetes!
 ```
 
-📌 Next Steps
- Add Helm chart
 
- Deploy to Kubernetes cluster
+🪖 Deploy with Helm (Template Preview Only)
 
- Add CI/CD with GitHub Actions
+You can generate Kubernetes manifests using this Helm chart without applying anything:
 
- Manage infrastructure with Terraform
+```bash
+cd app
+helm template flask-app
+```
+
+This will render the actual deployment and service configuration based on values.yaml.
+
+
+
+## 📌 Next Steps
+
+✅ Add Helm chart  
+🔜 Deploy to Kubernetes cluster  
+🔜 Add CI/CD with GitHub Actions  
+🔜 Manage infrastructure with Terraform
