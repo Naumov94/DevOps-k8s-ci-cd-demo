@@ -56,10 +56,52 @@ helm template flask-app
 This will render the actual deployment and service configuration based on values.yaml.
 
 
+---
+
+## 🧪 Local Deployment with Minikube
+
+This section describes how to deploy the app locally using Minikube.
+
+### 1. Start Minikube
+
+```bash
+minikube start
+```
+
+### 2. Switch Docker to Minikube's environment
+
+```bash
+eval $(minikube docker-env)
+```
+### 3. Build Docker image inside Minikube
+
+```bash
+docker build -t flask-demo-app .
+```
+
+### 4. Deploy with Helm
+
+```bash
+helm install flask-app ./flask-app
+```
+
+### 5. Access the app
+
+```bash
+minikube service flask-app
+Minikube will open the app in your default browser at a URL like:
+http://127.0.0.1:PORT
+⚠️ Note: Leave the terminal open while the tunnel is running!
+```
+
+
+
+---
 
 ## 📌 Next Steps
 
 ✅ Add Helm chart  
-🔜 Deploy to Kubernetes cluster  
+✅ Deploy locally with Minikube  
 🔜 Add CI/CD with GitHub Actions  
+🔜 Deploy to a real cloud Kubernetes cluster  
 🔜 Manage infrastructure with Terraform
