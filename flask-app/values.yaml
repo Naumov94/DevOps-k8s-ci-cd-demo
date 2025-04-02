@@ -2,12 +2,21 @@
 replicaCount: 1
 
 image:
-  repository: flask-demo-app
-  tag: latest
-  pullPolicy: IfNotPresent
+  repository: naumov94/flask-demo-app
+  tag: v1
+  pullPolicy: Always
 
 service:
   type: ClusterIP
   port: 5000
 
 containerPort: 5000
+
+serviceAccount:
+  create: false
+
+ingress:
+  enabled: false
+
+autoscaling:
+  enabled: false
